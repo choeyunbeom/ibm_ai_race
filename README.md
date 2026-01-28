@@ -54,33 +54,25 @@ torcs-rl-project/
 ├── docs/                        # Detailed documentation
 │   ├── progress_report.md       # SAC training chronicle
 │   ├── progress_report_ppo.md   # PPO training attempts
-│   ├── troubleshooting_report_en.md  # Debugging log
-│   ├── troubleshooting_analysis.html # Interactive analysis
-│   └── ppo_analysis.html        # PPO failure analysis
+│   ├── troubleshooting_report.md  # Debugging log
+│   ├── sac_analysis.pdf # Interactive analysis
+│   └── ppo_analysis.pdf        # PPO failure analysis
 │
-├── code/                        # Implementation
-│   ├── agents/
-│   │   ├── sac_agent.py        # SAC implementation
-│   │   └── ppo_agent.py        # PPO implementation
-│   ├── environments/
-│   │   └── torcs_env.py        # TORCS wrapper
-│   ├── training/
-│   │   ├── train_sac.py        # Training script
-│   │   └── reward_functions.py # Reward evolution
-│   └── analysis/
-│       └── analyze_logs.py     # Data analysis tools
+├── sac_clean_resume.py
+├── sac_hybrid_10k.py
+├── gym_torcs.py
+├── snakeoil3_gym.py
+├── autostart.sh
+├── practice.xml
+├── requirements.txt
+├── example_experiment.py
+├── vtorcs-RL-color/
 │
-├── checkpoints/                 # Saved models
-│   ├── sac_995k_steps.zip      # Pre-breakthrough
-│   └── sac_3247k_steps.zip     # Post-breakthrough
-│
-├── logs/                        # Training data
-│   └── training_log.csv        # 4,349 episode records
 │
 └── assets/                      # Visualizations
-    ├── distance_distribution.png
-    ├── learning_curve.png
-    └── sac_vs_ppo.png
+    ├── sac_cumulative_progress.png
+    ├── sac_distance_distribution.png
+    └── sac_success_rate.png
 ```
 
 ## 🔍 Key Problems Solved
@@ -111,41 +103,9 @@ torcs-rl-project/
 
 ### Detailed Reports
 - 📊 [SAC Progress Report](docs/progress_report.md) - Problem-solving chronicle
-- 🔧 [Troubleshooting Log](docs/troubleshooting_report_en.md) - Detailed debugging process
+- 🔧 [Troubleshooting Log](docs/sac_report_en.md) - Detailed debugging process
 - 🤖 [PPO Analysis](docs/progress_report_ppo.md) - Catastrophic forgetting case study
-- 📈 [Interactive Analysis](docs/troubleshooting_analysis.html) - Visual debugging tools
-
-## 🚀 Quick Start
-
-### Prerequisites
-```bash
-# Install TORCS
-sudo apt-get install torcs
-
-# Install Python dependencies
-pip install stable-baselines3 gym numpy pandas matplotlib
-```
-
-### Training
-```bash
-# Train SAC agent
-python code/training/train_sac.py --episodes 5000
-
-# Resume from checkpoint
-python code/training/train_sac.py --resume checkpoints/sac_995k_steps.zip
-```
-
-### Evaluation
-```bash
-# Test trained agent
-python code/training/evaluate.py --model checkpoints/sac_3247k_steps.zip --episodes 100
-```
-
-### Analysis
-```bash
-# Analyze training logs
-python code/analysis/analyze_logs.py --log logs/training_log.csv
-```
+- 📈 [Interactive Analysis](docs/troubleshooting_analysis.pdf) - Visual debugging tools
 
 ## 📈 Key Results
 
@@ -242,11 +202,12 @@ This project was developed for an IBM competition, but we welcome discussions an
 
 ## 📧 Contact
 
-**Author**: Choeyunbeom  
+**Author**: Yunbeom Choe, 
 **Program**: MSc Data Science and AI, University of Liverpool (2025-2026)  
-**Email**: [Your Email]  
-**LinkedIn**: [Your LinkedIn]  
-**GitHub**: [Your GitHub]
+**Email**: 
+          - sgychoe@liverpool.ac.uk
+**LinkedIn**:
+          - 
 
 ## 📄 License
 
