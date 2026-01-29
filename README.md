@@ -49,7 +49,7 @@ Max Distance: 3,618m
 ```
 torcs-rl-project/
 ├── README.md                    # This file
-├── blog_post.md                 # Full technical write-up
+│
 │
 ├── docs/                        # Detailed documentation
 │   ├── progress_report.md       # SAC training chronicle
