@@ -202,14 +202,14 @@ This project was developed for an IBM competition, but we welcome discussions an
 
 ## Contact
 
-**Author**: Yunbeom Choe, Zhiheng Wang, Vishal Saravanan
-**Program**: MSc Data Science and AI, University of Liverpool (2025-2026)  
-**Email**: 
-          - sgychoe@liverpool.ac.uk
-          - z.wang252@liverpool.ac.uk
-          - v.saravanan@liverpool.ac.uk 
-          - 
-          - 
+- **Author**: Yunbeom Choe, Zhiheng Wang, Vishal Saravanan
+- **Program**: MSc Data Science and AI, University of Liverpool (2025-2026)  
+- **Email**: 
+  - sgychoe@liverpool.ac.uk
+  - z.wang252@liverpool.ac.uk
+  - v.saravanan@liverpool.ac.uk 
+  - 
+  - 
 
 ## License
 
