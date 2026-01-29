@@ -1,4 +1,4 @@
-# 🏎️ TORCS SAC Agent Training Report: Problem-Solving Log
+# TORCS SAC Agent Training Report: Problem-Solving Log
 
 ## 1. Challenge: The 2400m Wall (S-Curve)
 - **Problem**: The agent consistently crashed at the **2400m S-Curve**. It optimized for high speed but failed to brake for the complex geometry.
@@ -18,7 +18,7 @@
 - **Solution**: **Immediate Termination** strategy.
   - Changed logic to immediately terminate the episode with a `-10.0` penalty if speed drops below **20 km/h**.
 - **Result**:
-  - **Low-speed steps dropped drastically**: **12.6% → 3.7%** 📉
+  - **Low-speed steps dropped drastically**: **12.6% → 3.7%**
   - Agent creates continuous momentum; "parking" behavior is eliminated.
 
 ## 3. Challenge: Logging Reliability
@@ -34,7 +34,7 @@
   - **Initial Training (`torcs_sac_telemetry_v2.csv`)**: **2 completions**
     - Max Distance: **3,600.48m**
     - Completion distances: 3,600.48m, 3,600.19m
-  - **Extended Training (`torcs_sac_hybrid_10k.csv`)**: **933 completions** 🏆
+  - **Extended Training (`torcs_sac_hybrid_10k.csv`)**: **933 completions**
     - Max Distance: **3,618.63m**
     - Total training steps: **9,745,365**
 - **Status**: Training is highly stable, with consistent lap completions and the primary goal (Completion) achieved and exceeded significantly.
