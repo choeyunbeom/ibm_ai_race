@@ -99,7 +99,7 @@ torcs-rl-project/
 ## Documentation
 
 ### Main Article
-**[Full Technical Blog Post](https://choeyunbeom.github.io/reinforcement learning/autonomous driving/torcs-rl-journey/)** - Complete story with methodology and insights
+**[Full Technical Blog Post](https://choeyunbeom.github.io/reinforcement%20learning/autonomous%20driving/torcs-rl-journey/)** - Complete story with methodology and insights
 
 ### Detailed Reports
 - [SAC Progress Report](docs/progress_report.md) - Problem-solving chronicle
