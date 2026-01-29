@@ -8,20 +8,20 @@
 
 This repository documents our journey training reinforcement learning agents to autonomously complete the TORCS Corkscrew track. Rather than just presenting final results, we focus on the **problem-solving process**: identifying failures, analyzing data, and implementing systematic solutions.
 
-## 🎯 Project Overview
+##  Project Overview
 
 **Challenge**: Train an RL agent to complete a 3,600m racing track with complex geometry, balancing speed and safety.
 
 **Achievements**:
-- ✅ Broke the 2400m barrier (100% → 35% failure rate)
-- ✅ Eliminated "parking" behavior (12.6% → 3.7% low-speed steps)
-- ✅ Achieved **37 track completions** over 4,349 episodes
-- ✅ Best lap time: **1:48**
-- ✅ Systematic debugging methodology documented
+- Broke the 2400m barrier (100% → 35% failure rate)
+- Eliminated "parking" behavior (12.6% → 3.7% low-speed steps)
+- Achieved **37 track completions** over 4,349 episodes
+- Best lap time: **1:48**
+- Systematic debugging methodology documented
 
 **Key Insight**: The 52.59% early failure rate isn't a bug—it's evidence of healthy exploration preventing premature convergence to suboptimal policies.
 
-## 📊 Training Statistics
+## Training Statistics
 
 ```
 Algorithm: Soft Actor-Critic (SAC)
@@ -44,7 +44,7 @@ Max Distance: 3,618m
 
 **Finding**: Only 3.38% reached >3000m, indicating the final section is **15x harder** than reaching the midpoint.
 
-## 🛠️ Repository Structure
+## Repository Structure
 
 ```
 torcs-rl-project/
@@ -75,7 +75,7 @@ torcs-rl-project/
     └── sac_success_rate.png
 ```
 
-## 🔍 Key Problems Solved
+## Key Problems Solved
 
 ### Problem #1: The 2400m Wall
 **Symptom**: 100% crash rate at S-Curve  
@@ -96,18 +96,18 @@ torcs-rl-project/
 **Solution**: Conservative reset with LR 0.00005  
 **Lesson**: "More training ≠ Better performance"
 
-## 📖 Documentation
+## Documentation
 
 ### Main Article
-📄 **[Full Technical Blog Post](blog_post.md)** - Complete story with methodology and insights
+**[Full Technical Blog Post](https://choeyunbeom.github.io/reinforcement learning/autonomous driving/torcs-rl-journey/)** - Complete story with methodology and insights
 
 ### Detailed Reports
-- 📊 [SAC Progress Report](docs/progress_report.md) - Problem-solving chronicle
-- 🔧 [Troubleshooting Log](docs/sac_report_en.md) - Detailed debugging process
-- 🤖 [PPO Analysis](docs/progress_report_ppo.md) - Catastrophic forgetting case study
-- 📈 [Interactive Analysis](docs/troubleshooting_analysis.pdf) - Visual debugging tools
+- [SAC Progress Report](docs/progress_report.md) - Problem-solving chronicle
+- [Troubleshooting Log](docs/sac_report_en.md) - Detailed debugging process
+- [PPO Analysis](docs/progress_report_ppo.md) - Catastrophic forgetting case study
+- [Interactive Analysis](docs/troubleshooting_analysis.pdf) - Visual debugging tools
 
-## 📈 Key Results
+## Key Results
 
 ### SAC Learning Progression
 ```
@@ -123,12 +123,12 @@ Episode Range    Max Distance    Key Event
 
 | Metric | SAC | PPO |
 |--------|-----|-----|
-| Sample Efficiency | ✅ High | ⚠️ Lower |
-| Training Stability | ⚠️ Sensitive | ✅ Robust |
+| Sample Efficiency | High | Lower |
+| Training Stability | Sensitive | Robust |
 | Best Distance | 3,618m | 1,400m |
 | Completions | 37 | 0 |
 
-## 🎓 Lessons Learned
+## Lessons Learned
 
 ### 1. Reward Engineering is Critical
 Small reward changes cause massive behavioral shifts. Every component must be tested for unintended exploits.
@@ -145,7 +145,7 @@ PPO's 65% regression (1,400m → 400m) proved that training duration must be car
 ### 5. Algorithm Selection Matters
 SAC's off-policy learning was crucial for sample efficiency in this sparse-reward, long-episode task.
 
-## 🔬 Technical Highlights
+## Technical Highlights
 
 ### Reward Function Evolution
 
@@ -173,7 +173,7 @@ print(df['termination'].value_counts())
 # Stuck: 62%, Crash: 38% → Led to immediate termination solution
 ```
 
-## 🎯 Future Work
+## Future Work
 
 ### Short-Term
 - [ ] Improve completion rate: 0.85% → >50%
@@ -185,35 +185,37 @@ print(df['termination'].value_counts())
 - [ ] Hierarchical RL (strategy + control)
 - [ ] Sim-to-real transfer
 
-## 📚 References
+## References
 
 1. Haarnoja, T., et al. (2018). "Soft Actor-Critic: Off-Policy Maximum Entropy Deep RL"
 2. Schulman, J., et al. (2017). "Proximal Policy Optimization Algorithms"
 3. [TORCS - The Open Racing Car Simulator](http://torcs.sourceforge.net/)
 4. [Stable-Baselines3 Documentation](https://stable-baselines3.readthedocs.io/)
 
-## 🤝 Contributing
+## Contributing
 
 This project was developed for an IBM competition, but we welcome discussions and suggestions:
 
-- 💬 Open an issue for questions
-- 🐛 Report bugs or unexpected behaviors
-- 💡 Suggest improvements to methodology
+- Open an issue for questions
+- Report bugs or unexpected behaviors
+- Suggest improvements to methodology
 
-## 📧 Contact
+## Contact
 
-**Author**: Yunbeom Choe, 
+**Author**: Yunbeom Choe, Zhiheng Wang, Vishal Saravanan
 **Program**: MSc Data Science and AI, University of Liverpool (2025-2026)  
 **Email**: 
           - sgychoe@liverpool.ac.uk
-**LinkedIn**:
+          - z.wang252@liverpool.ac.uk
+          - v.saravanan@liverpool.ac.uk 
+          - 
           - 
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - **IBM** for organizing the competition
 - **TORCS Community** for the simulation environment
@@ -222,10 +224,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-<p align="center">
-  <i>"The journey from 0% to 0.85% taught us that RL debugging is a science, not an art."</i>
-</p>
-
-<p align="center">
-  <sub>⭐ Star this repo if you found our problem-solving methodology useful!</sub>
-</p>
