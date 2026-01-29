@@ -106,7 +106,8 @@ torcs-rl-project/
 - [SAC Progress Report](docs/progress_report.md) - Problem-solving chronicle
 - [Troubleshooting Log](docs/sac_report_en.md) - Detailed debugging process
 - [PPO Analysis](docs/progress_report_ppo.md) - Catastrophic forgetting case study
-- [Interactive Analysis](docs/troubleshooting_analysis.pdf) - Visual debugging tools
+- [Interactive SAC Analysis](docs/troubleshooting_analysis.pdf) - Visual debugging tools
+- [Interactive PPO Analysis](docs/ppo_analysis.pdf) - Visual debugging tools
 
 ## Key Results
 
