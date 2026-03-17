@@ -101,9 +101,14 @@ class TorcsEnvClean(gym.Env):
 
         # [Only Essential Helper: Launch Control]
         # Prevents infinite stuck at start, but disables immediately after.
-        if self.time_step < 300:
+        if self.time_step < 450:
              self.R.d['accel'] = 1.0
              self.R.d['brake'] = 0.0
+
+        if self.time_step < 3500:
+            if speed < 90:
+                self.R.d['accel'] = 1.0
+                self.R.d['brake'] = 0.0
 
         self._send_to_server(self.R)
         server_str = self._recv_from_server()
@@ -295,14 +300,14 @@ if __name__ == "__main__":
     env = TorcsEnvClean(port=3001)
     
     # [Golden Model]
-    model_path = "checkpoints_sac_hybrid/torcs_sac_corkscrew_hybrid_3247596_steps"
+    model_path = "checkpoints_clean/torcs_sac_clean_final"
     print(f"Loading: {model_path}")
     
     # Load
     model = SAC.load(model_path, env=env)
     
     # Replay Buffer
-    rb_path = model_path + "_replay_buffer.pkl"
+    rb_path ="checkpoints_clean/torcs_sac_clean_final_replay_buffer.pkl"
     if os.path.exists(rb_path):
         print("Buffer Loaded.")
         model.load_replay_buffer(rb_path)
